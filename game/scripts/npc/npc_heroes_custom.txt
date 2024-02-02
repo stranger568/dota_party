@@ -1,0 +1,15 @@
+"DOTAHeroes"
+{
+    "npc_dota_hero_wisp"
+	{
+        "StatusHealth"		            "30"
+		"StatusMana"		            "0"
+        "AttributePrimary"		        "DOTA_ATTRIBUTE_STRENGTH"
+		"AttributeBaseStrength"		    "0"
+		"AttributeStrengthGain"		    "0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"		    "0"
+		"AttributeAgilityGain"		    "0"
+    }
+}

@@ -1,0 +1,287 @@
+.PummelGameHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+.HubLobbyHud
+{
+    width: 100%;
+    height: 100%;
+}
+
+.PlayersList
+{
+    flow-children: down;
+    margin-top: 140px;
+    margin-left: 10px;
+}
+
+.player_panel
+{
+    flow-children: none;
+    margin-bottom: 10px;
+}
+
+.player_portrait
+{
+    width: 100px;
+    height: 119px;
+    background-image: url("file://{images}/players_scores/player_bg.png");
+    background-size: 100%;
+}
+
+.player_info
+{
+    width: 300px;
+    height: 75px;
+    margin-top: 16px;
+    background-image: url("file://{images}/players_scores/interface_1.png");
+    background-size: 100%;
+    margin-left: 64px;
+}
+
+.player_info_style_0
+{
+    background-image: url("file://{images}/players_scores/interface_1.png");
+    background-size: 100%;
+}
+.player_info_style_1
+{
+    background-image: url("file://{images}/players_scores/interface_2.png");
+    background-size: 100%;
+}
+.player_info_style_2
+{
+    background-image: url("file://{images}/players_scores/interface_3.png");
+    background-size: 100%;
+}
+.player_info_style_3
+{
+    background-image: url("file://{images}/players_scores/interface_4.png");
+    background-size: 100%;
+}
+.player_info_style_4
+{
+    background-image: url("file://{images}/players_scores/interface_5.png");
+    background-size: 100%;
+}
+
+.player_name_bg
+{
+    width: 100px;
+    height: 35px;
+    vertical-align: bottom;
+    margin-bottom: 15px;
+    background-image: url("file://{images}/players_scores/name_bg.png");
+    background-size: 100%;
+}
+
+.player_name_label
+{
+    align: center center;
+    font-weight: semi-bold;
+    font-family: Radiance;
+    font-size: 16px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    color: gradient( linear, 0% 0%, 0% 100%, from( #f2c954 ), to( #db7e31 ) );
+    text-overflow: clip;
+}
+
+.hero_image_interface
+{
+    width: 80px;
+    height: 100px;
+    align: center center;
+    opacity-mask: url("file://{images}/players_scores/hero_mask.png");
+}
+
+.player_keys_panel
+{
+    flow-children: right;
+    margin-top: 10px;
+    margin-left: 55px;
+}
+
+.player_key_image
+{
+    width: 24px;
+    height: 22px;
+    background-image: url("file://{images}/players_scores/key.png");
+    background-size: 100%;
+}
+
+.player_key_quad
+{
+    vertical-align: center;
+    font-size: 20px;
+    color: gradient( linear, 0% 0%, 0% 100%, from( #f2c954 ), to( #db7e31 ) );
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.player_key_count
+{
+    font-size: 20px;
+    font-weight: semi-bold;
+    color: white;
+    margin-left: 5px;
+}
+
+.player_rewards_panel
+{
+    flow-children: right;
+    margin-top: 10px;
+    margin-left: 145px;
+}
+
+.player_reward_image
+{
+    width: 24px;
+    height: 22px;
+    background-image: url("file://{images}/players_scores/reward.png");
+    background-size: 100%;
+}
+
+.player_reward_quad
+{
+    vertical-align: center;
+    font-size: 20px;
+    color: gradient( linear, 0% 0%, 0% 100%, from( #f2c954 ), to( #db7e31 ) );
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.player_reward_count
+{
+    font-size: 20px;
+    font-weight: semi-bold;
+    color: white;
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.GameInfo
+{
+    flow-children: down;
+    horizontal-align: right;
+    margin-top: 50px;
+}
+
+.ProgressCount
+{
+    flow-children: right;
+}
+
+.ProgressCountHeader
+{
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100px;
+    height: 40px;
+}
+
+.ProgressCountHeaderLabel
+{
+    align: center center;
+    font-weight: semi-bold;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0px 0px 0px 3 black; 
+}
+
+.ProgressCountMain
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100px;
+    height: 40px;
+}
+
+.ProgressCountMainLabel
+{
+    align: center center;
+    font-weight: semi-bold;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0px 0px 0px 3 black; 
+}
+
+.PlayersMoveCount
+{
+    flow-children: right;
+    margin-top: 7px;
+}
+
+.PlayersMoveCountHeader
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100px;
+    height: 45px;
+}
+
+.PlayersMoveCountMain
+{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100px;
+    height: 45px;
+    flow-children: right-wrap;
+}
+
+.ProgressCountMainLabelMini
+{
+    align: center center;
+    text-align: center;
+    font-weight: semi-bold;
+    color: white;
+    font-size: 14px;
+    text-shadow: 0px 0px 0px 2 black; 
+}
+
+.player_queue_block
+{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+
+.time_notification
+{
+    font-size: 64px;
+    color: white;
+    font-weight: semi-bold;
+    horizontal-align: center;
+    margin-top: 20%;
+    transition-property: pre-transform-scale2d, opacity;
+    transition-duration: 0.2s;
+    pre-transform-scale2d: 0;
+    text-shadow: 0px 0px 0px 2 black;
+    opacity: 1;
+}
+
+.time_notification_low
+{
+    pre-transform-scale2d: 1;
+}
+
+.time_notification_close
+{
+    opacity: 0;
+}

@@ -1,0 +1,49 @@
+"DOTAAbilities"
+{
+    "ability_random_steps"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_random_steps"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "roll"
+    }
+    "ability_change_rotate_left"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_change_rotate"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "arrow_left"
+    }
+    "ability_change_rotate_right"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_change_rotate"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "arrow_right"
+    }
+    "ability_change_rotate_up"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_change_rotate"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "arrow_up"
+    }
+    "ability_change_rotate_down"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_change_rotate"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "arrow_down"
+    }
+}
+
+
+
+
+
+		

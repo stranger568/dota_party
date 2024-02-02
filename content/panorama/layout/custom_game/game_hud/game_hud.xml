@@ -1,0 +1,33 @@
+<root>
+    <styles>
+	   <include src="file://{resources}/layout/custom_game/game_hud/game_hud.css" />
+    </styles>
+
+    <scripts>
+	   <include src="file://{resources}/layout/custom_game/game_hud/game_hud.js" />   
+    </scripts>
+
+    <Panel class="PummelGameHud" hittest="false" >
+        <Panel class="HubLobbyHud" id="HubLobbyHud">
+            <Panel class="PlayersList" id="PlayersList" />
+            <Panel class="GameInfo">
+                <Panel class="ProgressCount">
+                    <Panel class="ProgressCountHeader">
+                        <Label class="ProgressCountHeaderLabel" text="Ход:" />
+                    </Panel>
+                    <Panel class="ProgressCountMain">
+                        <Label class="ProgressCountMainLabel" id="ProgressCountMainLabel" text="0 / ∞" />
+                    </Panel>
+                </Panel>
+                <Panel class="PlayersMoveCount">
+                    <Panel class="PlayersMoveCountMain" id="PlayersMoveCountMain">
+                        
+                    </Panel>
+                    <Panel class="PlayersMoveCountHeader">
+                        <Label class="ProgressCountMainLabelMini" text="Порядок Ходов" />
+                    </Panel>
+                </Panel>
+            </Panel>
+        </Panel>
+    </Panel>
+</root>

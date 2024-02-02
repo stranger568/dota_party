@@ -1,0 +1,54 @@
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="s2r://panorama/layout/custom_game/hero_selection/hero_selection.vcss_c" />
+		<include src="s2r://panorama/styles/banners/front_page_dota_plus_debut.vcss_c" />
+	</styles>
+
+	<scripts>
+		<include src="s2r://panorama/layout/custom_game/hero_selection/hero_selection.vjs_c" />
+	</scripts>
+
+	<Panel class="CustomPick" onfocus="DropInputFocus()">
+        <!---<Panel id="MovieBackground2" style="width:100%;height:100%;" class="selection_background" hittest="false" /> -->
+        <Movie src="file://{resources}/videos/bg.webm" id="MovieBackground2" style="width:100%;height:100%;" class="selection_background" repeat="true" controls="none" hittest="false" autoplay="onload" />
+        <MoviePanel src="file://{resources}/videos/heroes/npc_dota_hero_pudge.webm" id="MovieBackground" style="opacity: 0;" controls="none" hittest="false" onload="LoadHeroSelection();" autoplay="onload"/>
+        <Panel id="TimerPickBg" class="TimerPickBg">
+			<Label id="PickTimer" class="PickTimerClass" text="#loading_hero_select" />
+		</Panel>
+        <Panel class="PlayersPanel" id="PlayersPanel" />
+        <Panel class="SelectHero">
+            <Panel class="MenuSelectHero">
+                <Panel class="ButtonSelectD select_active_button" id="HeroesButtonSelectCheck">
+                    <Panel class="ButtonSelectHeroLeft" onactivate="OpenHeroesList();">
+                        <Label class="ButtonSelectHeroLabel" text="#SelectHero_pp" />
+                    </Panel>
+                </Panel>
+                <Panel class="ButtonSelectD" id="InventoryButtonSelectCheck">
+                    <Panel class="ButtonSelectHeroRight" onactivate="OpenInventory();">
+                        <Label class="ButtonSelectHeroLabel" text="#armory_pp" />
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Panel class="HeroesListChoose" id="HeroesListChoose" />
+            <Panel class="HeroesInventoryChoose" id="HeroesInventoryChoose" />
+        </Panel>
+        <Panel class="CurrentSelectHero">
+            <Panel class="HeroModel" id="HeroModel" />
+            <Panel class="HeroInformation">
+                <Label class="HeroNameInfo" id="HeroNameInfo" text="" />
+                <Panel class="HeroLevelInfo" id="HeroLevelInfo" />
+            </Panel>
+            <Panel class="PlayerHeroStats">
+                <Label class="LevelProgress" text="#level_progress" />
+                <Panel class="LevelProgressVisual">
+                    <Panel class="LevelProgressActive" id="LevelProgressActive" />
+                </Panel>
+                <Label class="LevelProgressExpInfo" id="LevelProgressExpInfo" html="true" text="" />
+            </Panel>
+        </Panel>
+        <Panel class="ReadyButton" id="ReadyButton">
+            <Label class="ReadyButtonLabel" text="#pp_ready" />
+        </Panel>
+	</Panel>
+</root>
