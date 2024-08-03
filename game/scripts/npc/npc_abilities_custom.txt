@@ -40,6 +40,16 @@
 		"MaxLevel"						"1"
         "AbilityTextureName"            "arrow_down"
     }
+    "ability_sniper_mini_game"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_sniper_mini_game"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "sniper_assassinate"
+        "AbilityCooldown"               "1"
+        "AbilityCastPoint"              "0.15"
+    }
 }
 
 

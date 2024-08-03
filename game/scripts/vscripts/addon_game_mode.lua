@@ -8,8 +8,10 @@ require("utils/table")
 require("hub")
 require("player_system")
 require("hero_select")
+require("player_control")
+require("minigames")
 
-PummelPartyMain.FREE_TEST = true
+PummelPartyMain.FREE_TEST = false
 
 function Precache( context )
     local heroes = LoadKeyValues("scripts/npc/activelist.txt")
@@ -17,6 +19,20 @@ function Precache( context )
         PrecacheResource( "soundfile", "soundevents/game_sounds_heroes/game_sounds_" .. k:gsub('npc_dota_hero_','') ..".vsndevts", context )  
         PrecacheResource( "soundfile", "soundevents/voscripts/game_sounds_vo_" .. k:gsub('npc_dota_hero_','') ..".vsndevts", context ) 
     end
+    PrecacheResource( "particle_folder", "particles/neutral_fx/", context )
+    PrecacheResource( "particle_folder", "particles/items_fx/", context )
+    PrecacheResource( "particle_folder", "particles/items5_fx/", context )
+    PrecacheResource( "particle_folder", "particles/items4_fx/", context )
+    PrecacheResource( "particle_folder", "particles/items3_fx/", context )
+    PrecacheResource( "particle_folder", "particles/items2_fx/", context )
+    PrecacheResource( "particle", "particles/dice_particle.vpcf", context )
+    PrecacheResource( "particle", "particles/generic_gameplay/generic_lifesteal.vpcf", context )
+    PrecacheResource( "particle", "particles/units/heroes/hero_axe/axe_culling_blade_kill.vpcf", context )
+    PrecacheResource( "particle", "particles/econ/items/alchemist/alchemist_midas_knuckles/alch_hand_of_midas.vpcf", context )
+    PrecacheResource( "particle", "particles/step_particle_stack.vpcf", context )
+    PrecacheResource( "particle", "particles/cup_down.vpcf", context )
+    PrecacheResource( "particle", "particles/sniper_q/sniper_q.vpcf", context )
+    PrecacheResource( "soundfile", "soundevents/game_sounds_pummel.vsndevts", context ) 
 end
 
 function Activate()
@@ -46,6 +62,7 @@ function PummelPartyMain:InitGameMode()
     ListenToGameEvent( "player_connect_full", Dynamic_Wrap(self, "OnConnectFull"), self )
     ListenToGameEvent( "game_rules_state_change", Dynamic_Wrap( self, "OnGameRulesStateChange" ), self )
     ListenToGameEvent( "npc_spawned", Dynamic_Wrap( self, "OnNPCSpawned" ), self )
+    CustomGameEventManager:RegisterListener("PLAYER_IS_READY_MINIGAME", Dynamic_Wrap(MiniGamesLib, "PlayerReadyUpdate"))
     GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap( self, "ExecuteOrderFilter" ), self )
 end
 

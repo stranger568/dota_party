@@ -53,6 +53,7 @@ HubGame.POINT_TYPE =
 
 HubGame.CURRENT_TYPE_POINTS = {}
 HubGame.CURRENT_TYPE_POINTS_UNITS = {}
+HubGame.GET_CURRENT_PLAYERS_POINTS_IN_HUB = {}
 
 function HubGame:ChangeRandomPointCup()
     local max = 0
@@ -89,10 +90,16 @@ end
 
 function HubGame:CreatePoint(point_name, abs)
     local origin = abs
-    origin.z = GetGroundHeight(origin, nil)
+    origin.z = GetGroundHeight(origin, nil) + 10
     -- differnt height
     if (point_name == "hub_point_up_13" or point_name == "hub_point_up_14") then
         origin.z = origin.z + 10
+    end
+    if (point_name == "hub_point_down_6" or point_name == "hub_point_left_1" or point_name == "hub_point_up_17") then
+        origin.z = origin.z + 15
+    end
+    if point_name == "hub_point_up_32" then
+        print("kkk", point_name)
     end
     local pedestal = CreateUnitByName("pummel_point", origin, false, nil, nil, DOTA_TEAM_NEUTRALS)
     local random_effect = RandomInt(1, 6)
@@ -149,8 +156,6 @@ function HubGame:GeneratePointsConnection()
             end
         end
     end
-
-    --DeepPrintTable(HubGame.POINTS_CONNECTION)
 end
 
 -- Запуск хаба с передвижением
@@ -169,6 +174,9 @@ function HubGame:StartHub()
             if not PummelPartyMain.FREE_TEST then
                 AddNewModifierForAllHeroes("modifier_pummel_party_hub", -1)
             end
+            if IsInToolsMode() then
+                AddNewModifierForAllHeroes("modifier_move_control", -1)
+            end
             AddNewAbilityForAllHeroes({"ability_random_steps", "ability_change_rotate_left", "ability_change_rotate_right", "ability_change_rotate_up", "ability_change_rotate_down"})
             HubGame:ChangeRandomPointCup()
             Timers:CreateTimer(3, function()
@@ -176,6 +184,7 @@ function HubGame:StartHub()
                 HubGame:StartQueuePlayers()
             end)
         else
+            print("kkk")
             return 0.1
         end
     end)
@@ -206,8 +215,7 @@ function HubGame:StartQueuePlayers()
             HubGame:StartQueuePlayer(random_player)
         end
     else
-        HubGame:RandomPlayersQueue()
-        HubGame:StartQueuePlayers()
+        HubGame:StartPreMiniGame()
     end
 end
 
@@ -273,7 +281,7 @@ function HubGame:PlayerLetsStep(hero, current_point, rotate_point)
             local length = hero:GetAbsOrigin() - next_point_entities:GetAbsOrigin()
             length.z = 0
             length = length:Length2D()
-            if length <= 25 then
+            if length <= 40 then
                 if player_system.PLAYERS[id].steps > 0 then
                     if not HubGame:CheckMorePath(hero, next_point_name) then
                         HubGame.CURRENT_POINT_STEP[id] = next_point_name
@@ -366,4 +374,28 @@ function HubGame:CheckBonusFromThisPosition(id, point_name, hero)
             return 0.2
         end)
     end
+end
+
+function HubGame:StartPreMiniGame()
+    HubGame.GET_CURRENT_PLAYERS_POINTS_IN_HUB = {}
+    for id, player_info in pairs(player_system.PLAYERS) do
+        if player_info.hero then
+            HubGame.GET_CURRENT_PLAYERS_POINTS_IN_HUB[id] = player_info.hero:GetAbsOrigin()
+        end
+    end
+    MiniGamesLib:StartRandomMiniGamesPre()
+end
+
+function HubGame:ReturnToHub()
+    for id, player_info in pairs(player_system.PLAYERS) do
+        if player_info.hero then
+            player_info.hero.MINIGAME_RESPAWN_POS = nil
+            player_info.hero:RespawnHero(false, false)
+            player_info.hero:SetAbsOrigin(HubGame.GET_CURRENT_PLAYERS_POINTS_IN_HUB[id])
+        end
+    end
+    Timers:CreateTimer(FrameTime(), function()
+        AddNewModifierForAllHeroes("modifier_pummel_party_hub", -1)
+        RemoveModifierForAllHeroes("modifier_fountain_invulnerability")
+    end)
 end

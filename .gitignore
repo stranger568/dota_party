@@ -15,14 +15,6 @@
 *.cfg
 *.vpk
 *.fbx
-# *.vmap
-# *.vmat
-# *.vpcf
-*.mp3
-*.wav
-# *.tga
 *.vsnd_c
-# *.png
 *.jpeg
-*.vmap
 link.bat

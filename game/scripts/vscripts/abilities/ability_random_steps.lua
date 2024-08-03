@@ -34,3 +34,10 @@ function modifier_ability_random_steps_count:OnStackCountChanged(iStackCount)
         ParticleManager:SetParticleControl(self.particle_step, 1, Vector(0, self:GetStackCount(), 0))
     end
 end
+
+function modifier_ability_random_steps_count:OnDestroy()
+    if not IsServer() then return end
+    if self.particle_step then
+        ParticleManager:DestroyParticle(self.particle_step, true)
+    end
+end

@@ -26,6 +26,7 @@ function modifier_pummel_cup:OnIntervalThink()
 		ParticleManager:SetParticleControl( effect_cast, 0, self:GetParent():GetAbsOrigin() )
 		ParticleManager:SetParticleControl( effect_cast, 1, Vector( 150, 150, 200 ) )
 		ParticleManager:ReleaseParticleIndex( effect_cast )
+        EmitGlobalSound( "pummel_cup_down" )
         self:StartIntervalThink(-1)
     end
 end

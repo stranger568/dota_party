@@ -23,6 +23,14 @@ function AddNewModifierForAllHeroes(modifier_name, duration)
     end
 end
 
+function RemoveModifierForAllHeroes(modifier_name)
+    for id, info in pairs(player_system.PLAYERS) do
+        if info.hero ~= nil then
+            info.hero:RemoveModifierByName(modifier_name)
+        end
+    end
+end
+
 function AddNewAbilityForAllHeroes(table)
     for id, info in pairs(player_system.PLAYERS) do
         if info.hero ~= nil then
@@ -60,6 +68,16 @@ function UnlockCameraAll()
             PlayerResource:SetCameraTarget(id, nil)
         end
     end 
+end
+
+function CDOTA_BaseNPC:HasOverrideAnimation()
+	local allmodifs = self:FindAllModifiers()
+	for _, modif in ipairs(allmodifs) do
+		if modif:HasFunction(MODIFIER_PROPERTY_OVERRIDE_ANIMATION) then
+			return true
+		end
+	end
+	return false
 end
 
 function CDOTA_BaseNPC:SetCamera(target)

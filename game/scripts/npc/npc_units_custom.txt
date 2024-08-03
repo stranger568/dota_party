@@ -24,7 +24,7 @@
 	{
         "ModelScale"            "1"
 		"BaseClass"             "npc_dota_base_additive"
-		"Model"                 "models/ui/battle_cup_trophy/mesh/battle_cup_fall_trophy.vmdl"
+		"Model"                 "models/ui/battle_cup_trophy/battle_cup_winter_champions_trophy.vmdl"
 		"AttackCapabilities"    "DOTA_UNIT_CAP_NO_ATTACK"
 		"BoundsHullName"        "DOTA_HULL_SIZE_SMALL"
 		"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"

@@ -1,3 +1,5 @@
 LinkLuaModifier("modifier_pummel_party_hub", "modifiers/modifier_pummel_party_hub", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_pummel_party_pedestal", "modifiers/modifier_pummel_party_pedestal", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_pummel_cup", "modifiers/modifier_pummel_cup", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_move_control", "modifiers/modifier_move_control", LUA_MODIFIER_MOTION_BOTH)
+LinkLuaModifier("modifier_pummel_party_pre_mini_game", "modifiers/modifier_pummel_party_pre_mini_game", LUA_MODIFIER_MOTION_NONE)

@@ -13,7 +13,7 @@ PICK_STATE_STATUS[4] = PP_PICK_STATE_END
 TIME_OF_STATE = {}
 TIME_OF_STATE[1] = 10
 TIME_OF_STATE[2] = 30
-TIME_OF_STATE[3] = 10
+TIME_OF_STATE[3] = 2
 
 if IsInToolsMode() then
     TIME_OF_STATE[2] = 1000
@@ -195,6 +195,7 @@ function pp_hero_selection:GiveHeroPlayer(id,hero)
 	local new_hero = PlayerResource:GetSelectedHeroEntity(id)
 	if new_hero ~= nil then
 		player_system.PLAYERS[id].hero = new_hero
+        new_hero:SetBaseMoveSpeed(550)
 	end
 end
 

@@ -37,6 +37,16 @@ function player_system:RegisterPlayerInfo(id, is_bot)
     return playerinfo
 end
 
+function player_system:GetPlayersCount()
+    local count = 0
+    for _, info in pairs(player_system.PLAYERS) do
+        if not info.is_lose then
+            count = count + 1
+        end
+    end
+    return count
+end
+
 function player_system:RegisterPlayerHero(id, hero)
     if hero and player_system.PLAYERS[id] then
 	    player_system.PLAYERS[id].hero = hero
