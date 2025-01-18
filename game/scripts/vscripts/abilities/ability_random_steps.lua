@@ -5,6 +5,9 @@ ability_random_steps = class({})
 function ability_random_steps:OnSpellStart()
     if not IsServer() then return end
     local steps = RandomInt(1, 9)
+    if IsInToolsMode() then
+        --steps = 99
+    end
     Timers:CreateTimer(0.25, function()
         if self:GetCaster().particle_dice then
             ParticleManager:DestroyParticle(self:GetCaster().particle_dice, false)
@@ -12,7 +15,14 @@ function ability_random_steps:OnSpellStart()
             self:GetCaster().particle_dice = nil
         end
         self:GetCaster():AddNewModifier(self:GetCaster(), nil, "modifier_ability_random_steps_count", {count = steps})
-        HubGame:PlayerSelectSteps(self:GetCaster():GetPlayerOwnerID(), steps)
+        if not self.is_start then
+            HubGame:PlayerSelectSteps(self:GetCaster():GetPlayerOwnerID(), steps)
+        else
+            HubGame:SetStartGameRandomQueue(self:GetCaster():GetPlayerOwnerID(), steps)
+        end
+        if self.is_start then
+            self.is_start = nil
+        end
     end)
     self:SetHidden(true)
 end

@@ -73,19 +73,21 @@ function modifier_move_control:OnIntervalThink()
 		if self.parent.toDirect ~= nil then
 			local vPosition = Vector(self.parent.toDirect["0"],self.parent.toDirect["1"], self.parent:GetOrigin().z)
 			vDirection = (vPosition - self.parent:GetOrigin()):Normalized()
-			self.parent:SetForwardVector(vDirection)
+            local yaw = math.deg(math.atan2(vDirection.y, vDirection.x))
+            self.parent:SetAbsAngles(0, yaw, 0)
+            self.parent:FaceTowards(Vector(self.parent.toDirect["0"],self.parent.toDirect["1"], 0))
 		end
 	end
 	if self.vMovePoint ~= nil then
 		vDirection = (self.vMovePoint - self.parent:GetOrigin()):Normalized()
 		local vPosition = self.parent:GetOrigin() + vDirection * (self.parent:GetMoveSpeedModifier(self.parent:GetBaseMoveSpeed(), false)*(1/30))
 		FindClearSpaceForUnit(self.parent, vPosition, false)
-        self.parent:SetForwardVector(vDirection)
-		self.parent:InterruptChannel()
+        --self.parent:SetForwardVector(vDirection)
+        --self.parent:FaceTowards(vPosition)
+		--self.parent:InterruptChannel()
 		if (self.vMovePoint - self.parent:GetOrigin()):Length2D() < 25 then
 			self.vMovePoint = nil
 		end
-		
 		if not self.run and not self.parent:HasOverrideAnimation() then
 			self.run = true
 			self.parent:FadeGesture(ACT_DOTA_IDLE)
@@ -103,4 +105,21 @@ function modifier_move_control:OnIntervalThink()
 		self.parent:FadeGesture(ACT_DOTA_IDLE)
 		self.run = false
 	end
+end
+
+function modifier_move_control:OnDestroy()
+    if not IsServer() then return end
+    self:GetParent():FadeGesture(ACT_DOTA_RUN)
+	self:GetParent():FadeGesture(ACT_DOTA_IDLE)
+end
+
+function modifier_move_control:DeclareFunctions()
+    return
+    {
+        MODIFIER_PROPERTY_DISABLE_TURNING
+    }
+end
+
+function modifier_move_control:GetModifierDisableTurning()
+    return 1
 end

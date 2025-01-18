@@ -263,6 +263,14 @@ function table.reverse(tbl)
     return t
 end
 
+function table.ReverseArray(array)
+    local n = #array
+    for i = 1, math.floor(n / 2) do
+        array[i], array[n - i + 1] = array[n - i + 1], array[i]
+    end
+    return array
+end
+
 
 -- remove item
 function table.remove_item(tbl,item)

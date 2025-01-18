@@ -145,8 +145,8 @@ function pp_hero_selection:EndSelection()
 	PICK_STATE = PP_PICK_STATE_END
 	pp_hero_selection.pick_ended = true
 	CustomGameEventManager:Send_ServerToAllClients( 'pp_pick_end', {} )
+    HubGame:GeneratePointsConnection()
     Timers:CreateTimer(1, function()
-        HubGame:GeneratePointsConnection()
 		HubGame:StartHub()
     end)
 end

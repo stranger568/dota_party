@@ -2,12 +2,11 @@
     <styles>
 	   <include src="file://{resources}/layout/custom_game/game_hud/game_hud.css" />
     </styles>
-
     <scripts>
+        <include src="file://{resources}/layout/custom_game/scripts/util.js" />
 	   <include src="file://{resources}/layout/custom_game/game_hud/game_hud.js" />
        <include src="file://{resources}/layout/custom_game/game_hud/player_control.js" /> 
     </scripts>
-
     <Panel class="PummelGameHud" hittest="false" >
         <Panel class="HubLobbyHud" id="HubLobbyHud" hittest="false">
             <Panel class="PlayersList" id="PlayersList" />
@@ -22,22 +21,22 @@
                 </Panel>
                 <Panel class="PlayersMoveCount">
                     <Panel class="PlayersMoveCountMain" id="PlayersMoveCountMain" />
-                    <Panel class="PlayersMoveCountHeader">
-                        <Label class="ProgressCountMainLabelMini" text="Порядок Ходов" />
-                    </Panel>
                 </Panel>
             </Panel>
             <Panel class="GameHudInterface" id="GameHudInterface">
+                <Panel class="BorderLeft"/>
+                <Panel class="ItemBG" />
                 <Panel class="HeroNameAndPortrait">
-                    <DOTAUnitName class="HeroHudHeroName" hittest="false" />
                     <DOTAPortrait class="HudHeroPortrait" onmouseover="DOTAHUDShowVisionRange();" onmouseout="DOTAHUDHideVisionRange();" />
                 </Panel>
-                <Panel class="PlayerAbilities" id="PlayerAbilities">
-                    <DOTAAbilityList id="abilities" />
+                <Panel class="HealthBG" />
+                <Panel class="HeroHealthPoints">
+                    <Panel class="HeroHealthPointsBurner" id="HeroHealthPointsBurner" />
+                    <Label class="HeroHealthPointsLabel" id="HeroHealthPointsLabel" text="0" />
                 </Panel>
+                <Panel class="PlayerAbilities" id="PlayerAbilities" />
             </Panel>
         </Panel>
-
         <Panel class="PreMiniGameHud" id="PreMiniGameHud">
             <Panel class="DesignLinePreGame" />
             <Label class="MiniGameInformationWarning" text="Запомните ! Результаты мини-игр определяют порядок ходов." />
@@ -45,20 +44,54 @@
                 <Movie src="file://{resources}/videos/mini_games/sniper_duel.webm" id="MiniGameInfoVideo" style="width:98%;height:98%;align:center center;border-radius:40px;" class="MiniGameInfoVideo" repeat="true" controls="none" hittest="false" autoplay="onload" />
                 <Panel class="PreGameInfoBorder" />
                 <Panel class="PreGameInfoShadow" />
-                <Label class="MiniGameInfoName" id="MiniGameInfoName" text="MiniGameName" />
-                <Label class="MiniGameInfoDescription" id="MiniGameInfoDescription" text="Test Description This MiniGame" />
+                <Label class="MiniGameInfoName" html="true" id="MiniGameInfoName" text="" />
+                <Label class="MiniGameInfoDescription" html="true" id="MiniGameInfoDescription" text="" />
             </Panel>
             <Panel class="PlayersListPreGame" id="PlayersListPreGame" />
             <Panel class="InstructionBlockName">
                 <Label class="InstructionName" text="Инструкции" />
             </Panel>
             <Panel class="InstructionBlockDescription">
-                <Label class="InstructionDescription" text="Ставьте ящики друг на друга, подбирая момент, победит игрок чья пирамида быстрее  достигнет вверха." />
+                <Label class="InstructionDescription" html="true" id="InstructionDescription" text="" />
             </Panel>
             <Label class="MiniGamePreTimer" id="MiniGamePreTimer" text="30" />
             <Panel class="ReadyButton" id="ReadyButton" onactivate="PlayerIsReady();">
                 <Label class="ReadyButtonLabel" text="#pp_ready" />
             </Panel>
         </Panel>
+        <Panel class="ChestNotification" id="ChestNotification">
+            <Panel class="NotificationHeader">
+                <Label class="NotificationChestLabel" text="#notification_chest_header" />
+            </Panel>
+            <Panel class="NotificationLabelWithIcon">
+                <Panel class="NotificationIconChest" />
+                <Label class="NotificationLabelDescription" text="#notification_chest_description" />
+            </Panel>
+        </Panel>
+        <Panel class="ChestNotificationIsOpened" id="ChestNotificationIsOpened">
+            <Panel class="NotificationHeader">
+                <Label class="NotificationChestLabel" text="#notification_chest_header" />
+            </Panel>
+            <Panel class="NotificationLabelWithIcon">
+                <Panel class="NotificationIconChest" />
+                <Label class="NotificationLabelDescription" text="#notification_chest_open_description" />
+            </Panel>
+            <Panel class="NotificationButtons">
+                <Panel class="ButtonsNotAlign">
+                    <Panel class="ButtonNoNotification" id="CupButtonNoNotification">
+                        <Label text="#notification_chest_open_button_no" />
+                    </Panel>
+                    <Panel class="ButtonYesNotification" id="CupButtonYesNotification">
+                        <Label text="#notification_chest_open_button_yes" />
+                    </Panel>
+                </Panel>
+            </Panel>
+        </Panel>
+        <DOTAScenePanel class="ArrowCase ArrowHover" id="ArrowCase" map="maps/control_map.vmap" light="light" particleonly="false" camera="default" always-cache-composition-layer="true"/>
+        <DOTAScenePanel class="ArrowCase2 ArrowHover" id="ArrowCase2" map="maps/control_map.vmap" light="light" particleonly="false" camera="default" always-cache-composition-layer="true"/>
+        <DOTAScenePanel class="ArrowCase3 ArrowHover" id="ArrowCase3" map="maps/control_map.vmap" light="light" particleonly="false" camera="default" always-cache-composition-layer="true"/>
+        <DOTAScenePanel class="ArrowCase4 ArrowHover" id="ArrowCase4" map="maps/control_map.vmap" light="light" particleonly="false" camera="default" always-cache-composition-layer="true"/>
+        <DOTAScenePanel class="ArrowCase5 ArrowHover" id="ArrowCase5" map="maps/control_map.vmap" light="light" particleonly="false" camera="default" always-cache-composition-layer="true"/>
+        <DOTAScenePanel class="ArrowCase6 ArrowHover" id="ArrowCase6" map="maps/control_map.vmap" light="light" particleonly="false" camera="default" always-cache-composition-layer="true"/>
     </Panel>
 </root>

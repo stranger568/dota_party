@@ -13,8 +13,7 @@
 .PlayersList
 {
     flow-children: down;
-    margin-top: 140px;
-    margin-left: 10px;
+    margin-top: 60px;
 }
 
 .player_panel
@@ -27,18 +26,14 @@
 {
     width: 100px;
     height: 119px;
-    background-image: url("file://{images}/players_scores/player_bg.png");
-    background-size: 100%;
 }
 
 .player_info
 {
-    width: 300px;
-    height: 75px;
-    margin-top: 16px;
+    width: 271px;
+    height: 59px;
     background-image: url("file://{images}/players_scores/interface_1.png");
     background-size: 100%;
-    margin-left: 64px;
 }
 
 .player_info_style_0
@@ -79,15 +74,14 @@
 
 .player_name_label
 {
-    align: center center;
+    vertical-align: center;
+    margin-left: 70px;
     font-weight: semi-bold;
     font-family: Radiance;
     font-size: 16px;
-    margin-bottom: 8px;
     text-transform: uppercase;
-    width: 100%;
-    text-align: center;
-    color: gradient( linear, 0% 0%, 0% 100%, from( #f2c954 ), to( #db7e31 ) );
+    width: 100px;
+    text-align: left;
     text-overflow: clip;
 }
 
@@ -101,16 +95,46 @@
 
 .player_keys_panel
 {
+    margin-left: 285px;
     flow-children: right;
-    margin-top: 10px;
-    margin-left: 55px;
+    vertical-align: center;
+    width: 63px;
+    height: 46px;
+    background-image: url("file://{images}/players_scores/key_bg.png");
+    background-size: 100%;
 }
 
 .player_key_image
 {
-    width: 24px;
-    height: 22px;
-    background-image: url("file://{images}/players_scores/key.png");
+    width: 18px;
+    height: 18px;
+    vertical-align: center;
+    margin-left: 5px;
+}
+
+.player_key_image_0
+{
+    background-image: url("file://{images}/players_scores/gem_green.png");
+    background-size: 100%;
+}
+.player_key_image_1
+{
+    background-image: url("file://{images}/players_scores/gem_purple.png");
+    background-size: 100%;
+}
+.player_key_image_2
+{
+    background-image: url("file://{images}/players_scores/gem_yellow.png");
+    background-size: 100%;
+}
+.player_key_image_3
+{
+    background-image: url("file://{images}/players_scores/gem_blue.png");
+    background-size: 100%;
+}
+.player_key_image_4
+{
+    background-image: url("file://{images}/players_scores/gem_red.png");
     background-size: 100%;
 }
 
@@ -125,23 +149,25 @@
 
 .player_key_count
 {
-    font-size: 20px;
+    font-size: 18px;
+    vertical-align: center;
     font-weight: semi-bold;
     color: white;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .player_rewards_panel
 {
     flow-children: right;
-    margin-top: 10px;
-    margin-left: 145px;
+    margin-left: 175px;
+    width: 80px;
+    vertical-align: center;
 }
 
 .player_reward_image
 {
-    width: 24px;
-    height: 22px;
+    width: 25px;
+    height: 21px;
     background-image: url("file://{images}/players_scores/reward.png");
     background-size: 100%;
 }
@@ -159,8 +185,9 @@
 {
     font-size: 20px;
     font-weight: semi-bold;
+    vertical-align: center;
     color: white;
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
 .player_health_line_main
@@ -207,6 +234,8 @@
 .ProgressCount
 {
     flow-children: right;
+    opacity: 0;
+    visibility: collapse;
 }
 
 .ProgressCountHeader
@@ -256,9 +285,9 @@
 
 .PlayersMoveCountMain
 {
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100px;
-    height: 45px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    padding-right: 0px;
     flow-children: right-wrap;
 }
 
@@ -274,11 +303,24 @@
 
 .player_queue_block
 {
-    width: 15px;
-    height: 15px;
-    margin-left: 10px;
-    margin-top: 5px;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
     border: 1px solid black;
+}
+
+.time_notification_start
+{
+    font-size: 64px;
+    color: rgb(255, 196, 0);
+    font-weight: semi-bold;
+    horizontal-align: center;
+    margin-top: 20%;
+    transition-property: pre-transform-scale2d, opacity;
+    transition-duration: 0.2s;
+    pre-transform-scale2d: 0;
+    text-shadow: 0px 0px 5px 4 black;
+    opacity: 1;
 }
 
 .time_notification
@@ -309,26 +351,23 @@
 .GameHudInterface
 {
     vertical-align: bottom;
-    flow-children: right;
+    flow-children: none;
     horizontal-align: center;
 }
 
 .HeroNameAndPortrait
 {
-    horizontal-align: center;
+    horizontal-align: left;
+    margin-left: 35px;
     vertical-align: bottom;
-    margin-bottom: 20px;
     flow-children: down;
-    width: 180px;
+    transform: translateY(30px);
 }
 
 .HudHeroPortrait
 {
-    width: 180px;
-    height: 180px;
-    border-radius: 100px;
-    box-shadow: 0px 0px 12px 1px black;
-    margin-top: 10px;
+    width: 215px;
+    height: 215px;
 }
 
 .HeroHudHeroName
@@ -339,15 +378,14 @@
 
 .PlayerAbilities
 {
-    width: 300px;
-    height: 128px;
-    vertical-align: center;
-    margin-left: 20px;
+    width: 920px;
+    height: 94px;
+    vertical-align: bottom;
+    margin-left: 265px;
+    flow-children: right;
 }
 
-
 // Mini Gamepre
-
 .PreMiniGameHud
 {
     width: 100%;
@@ -606,4 +644,314 @@
 {
     background-image: url("file://{images}/hero_selection/player_bg_6.png");
     background-size: 100%;
+}
+
+.ItemBG
+{
+    width: 1012px;
+    height: 99px;
+    background-image: url("file://{images}/hud_abilities/item_bg.png");
+    background-size: 100%;
+    vertical-align: bottom;
+    margin-left: 220px;
+}
+
+.HealthBG
+{
+    width: 239px;
+    height: 49px;
+    background-image: url("file://{images}/hud_abilities/health_bg.png");
+    background-size: 100%;
+    vertical-align: bottom;
+    margin-left: 35px;
+}
+
+.BorderLeft
+{
+    width: 37px;
+    height: 100px;
+    background-image: url("file://{images}/hud_abilities/left_border.png");
+    background-size: 100%;
+    vertical-align: bottom;
+}
+
+.HeroHealthPoints
+{
+    width: 176px;
+    height: 13px;
+    margin-left: 55px;
+    vertical-align: bottom;
+    margin-bottom: 25px;
+    z-index: 10;
+    background-color: gradient(
+        linear,
+        0% 0%,
+        0% 100%,
+        from(#17200d),
+        color-stop(0.2, #222e13),
+        color-stop(0.5, #1e2911),
+        to(#17200d)
+    );
+}
+
+.HeroHealthPointsBurner
+{
+    width: 100%;
+    height: 100%;
+    transition-property: width;
+    transition-duration: 0.2s;
+    background-color: gradient(linear,0% 0%,0% 100%,from(#29bb29),color-stop(0.2, #43b83b),color-stop(0.5, #1b881d),to(#175d17));
+}
+
+.HeroHealthPointsLabel
+{
+    align: center center;
+    color: white;
+    font-weight: semi-bold;
+    font-size: 12px;
+    text-shadow: 0px 0px 0px 2 black; 
+}
+
+.PlayerAbility
+{
+    vertical-align: center;
+    margin-right: 10px;
+}
+
+.local_ability_bg
+{
+    width: 66px;
+    height: 66px;
+    background-image: url("file://{images}/hud_abilities/ability_frame.png");
+    background-size: 100%;
+    z-index: 10;
+}
+
+.local_ability_image
+{
+    width: 66px;
+    height: 66px;
+}
+
+.local_ability_button
+{
+    min-width: 15px;
+    height: 15px;
+    border: 1px solid #7d297d;
+    border-radius: 2px;
+    background-color: black;
+    z-index: 11;
+}
+
+.local_ability_button_text
+{
+    align: center center;
+    color: white;
+    text-align: center;
+}
+
+.ChestNotification
+{
+    width: 600px;
+    height: 300px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 15%;
+    flow-children: down;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+}
+
+.NotificationHeader
+{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.NotificationChestLabel
+{
+    align: center center;
+    color: #efd9f7;
+    font-weight: semi-bold;
+    font-size: 42px;
+    text-shadow: 0px 0px 4px 2 #704793; 
+    text-transform: uppercase;
+}
+
+.NotificationLabelWithIcon
+{
+    flow-children: right;
+    margin-top: 20px;
+    width: 100%;
+    height: 196px;
+}
+
+.NotificationIconChest
+{
+    width: 196px;
+    height: 196px;
+    background-image: url("file://{images}/notification/chest.png");
+    background-size: 100%;
+}
+
+.NotificationLabelDescription
+{
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+    background-color: rgba(0,0,0,0.8);
+    text-align: left; 
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 24px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.ChestNotificationIsOpened
+{
+    width: 600px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 15%;
+    flow-children: down;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+}
+
+.NotificationButtons
+{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0.8);
+    flow-children: right;
+}
+
+.ButtonsNotAlign
+{
+    horizontal-align: right;
+    flow-children: right;
+}
+
+.ButtonNoNotification
+{
+    border: 1px solid white;
+    border-brush: gradient(radial, 0% 0%, 2% 10%, 100% 100%, from(rgba(207, 33, 33, 0.63)), to(rgba(254, 151, 151, 0)));
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(rgba(44, 18, 18, 0.7)), to(rgba(59, 26, 26, 0.4)));
+    height: 45px;
+    width: 150px;
+    vertical-align: center;
+    margin: 5px;
+    transition-property: brightness;
+    transition-duration: 0.2s;
+}
+
+.ButtonYesNotification
+{
+    border: 1px solid white;
+    border-brush: gradient(radial, 0% 0%, 2% 10%, 100% 100%, from(rgba(33, 207, 62, 0.63)), to(rgba(151, 254, 168, 0.089)));
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(rgba(18, 44, 22, 0.7)), to(rgba(30, 59, 26, 0.4)));
+    height: 45px;
+    width: 150px;
+    vertical-align: center;
+    margin: 5px;
+    transition-property: brightness;
+    transition-duration: 0.2s;
+}
+
+.ButtonNoNotification:hover
+{
+    brightness: 1.5;
+}
+
+.ButtonYesNotification:hover
+{
+    brightness: 1.5;
+}
+
+.ButtonNoNotification Label
+{
+    align: center center;
+    color: white;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.ButtonYesNotification Label
+{
+    align: center center;
+    color: white;
+    font-weight: semi-bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.ArrowCase
+{
+    width: 150px;
+    height: 150px;
+    align: center center;
+    margin-top: 150px;
+    visibility: collapse;
+}
+
+.ArrowCase2
+{
+    width: 150px;
+    height: 150px;
+    align: center center;
+    margin-bottom: 250px;
+    transform: rotateZ(195deg);
+    visibility: collapse;
+}
+
+.ArrowCase3
+{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 200px;
+    margin-right: 200px;
+    align: center center;
+    transform: rotateZ(135deg);
+    visibility: collapse;
+}
+
+.ArrowCase4
+{
+    width: 150px;
+    height: 150px;
+    align: center center;
+    margin-bottom: 220px;
+    margin-left: 100px;
+    transform: rotateZ(200deg);
+    visibility: collapse;
+}
+
+.ArrowCase5
+{
+    width: 150px;
+    height: 150px;
+    margin-bottom: 300px;
+    align: center center;
+    transform: rotateZ(180deg);
+    visibility: collapse;
+}
+
+.ArrowCase6
+{
+    width: 150px;
+    height: 150px;
+    align: center center;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    transform: rotateZ(270deg);
+    visibility: collapse;
+}
+
+.ArrowHover:hover
+{
+    brightness: 2;
 }

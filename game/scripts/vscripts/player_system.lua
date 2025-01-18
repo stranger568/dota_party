@@ -25,9 +25,16 @@ function player_system:RegisterPlayerInfo(id, is_bot)
         bLoaded = false,
     }
 
-    if is_bot then
+    if IsInToolsMode() then
+        playerinfo.keys = 40
+    end
+
+    if is_bot and IsInToolsMode() then
         playerinfo.bRegistred = true
         playerinfo.bLoaded = true
+        playerinfo.is_ready = true
+        playerinfo.selected_hero = "npc_dota_hero_pudge"
+        playerinfo.is_bot = true
     end
 
     player_system.PLAYERS[id] = playerinfo
@@ -54,17 +61,21 @@ function player_system:RegisterPlayerHero(id, hero)
 end
 
 function player_system:HeroModifyHealth(id, new_health)
-    if new_health > 0 and player_system.PLAYERS[id].health < player_system.PLAYERS[id].max_health then
-	    player_system.PLAYERS[id].health = player_system.PLAYERS[id].health + new_health
-    elseif new_health < 0 then
-        player_system.PLAYERS[id].health = player_system.PLAYERS[id].health + new_health
-    end
+    player_system.PLAYERS[id].health = math.max(0, math.min(player_system.PLAYERS[id].health + new_health, player_system.PLAYERS[id].max_health))
     CustomNetTables:SetTableValue("players_system", tostring(id), player_system.PLAYERS[id])
+    return player_system.PLAYERS[id].health
 end
 
 function player_system:HeroModifyKeys(id, new_keys)
 	player_system.PLAYERS[id].keys = player_system.PLAYERS[id].keys + new_keys
     CustomNetTables:SetTableValue("players_system", tostring(id), player_system.PLAYERS[id])
+    return player_system.PLAYERS[id].keys
+end
+
+function player_system:HeroModifyRewards(id, new_rewards)
+	player_system.PLAYERS[id].rewards_count = player_system.PLAYERS[id].rewards_count + new_rewards
+    CustomNetTables:SetTableValue("players_system", tostring(id), player_system.PLAYERS[id])
+    return player_system.PLAYERS[id].rewards_count
 end
 
 function player_system:UpdatePlayer(id)

@@ -44,8 +44,73 @@ function PlayersControlls:ButtonPressed(data)
                     hero.shoot = true
                 elseif button == "E" then
                     ItemsSystem:PickupDroppedItem(hero)
+                elseif button == "Space" then
+                    PlayersControlls:UseAbility(hero)
+                elseif button == "1" then
+                    PlayersControlls:UseAbilityOne(hero)
                 end
             end
+        end
+    end
+end
+
+function PlayersControlls:UseAbilityOne(hero)
+    print("uses 1 button")
+    local abilities_game = 
+    {
+        "ability_pummel_grab_crown_1",
+        "ability_pummel_grab_crown_2",
+        "ability_pummel_grab_crown_3",
+        "ability_pummel_grab_crown_4",
+        "ability_pummel_grab_crown_5",
+        "ability_pummel_grab_crown_6",
+        "ability_pummel_potato_1",
+        "ability_pummel_potato_2",
+        "ability_pummel_potato_3",
+        "ability_pummel_potato_4",
+        "ability_pummel_potato_5",
+        "ability_pummel_potato_6",
+    }
+    for _, ability_name in pairs(abilities_game) do
+        if hero:HasAbility(ability_name) then
+            local ability = hero:FindAbilityByName(ability_name)
+            if ability_name == "ability_pummel_grab_crown_5" or ability_name == "ability_pummel_potato_4" then
+                local skewer_pos = hero:GetAbsOrigin() + hero:GetForwardVector() * 800
+                for i=1, 800 / 10 do
+                    local check_pos = hero:GetAbsOrigin() + hero:GetForwardVector() * (10 * i)
+                    if not GridNav:CanFindPath(hero:GetAbsOrigin(), check_pos) then
+                        skewer_pos = hero:GetAbsOrigin() + hero:GetForwardVector() * (10 * i-1)
+                        break
+                    end
+                end
+                hero:CastAbilityOnPosition(skewer_pos, ability, hero:GetPlayerOwnerID())
+                Timers:CreateTimer(3, function()
+                    hero:RemoveAbilityByHandle(ability)
+                end)
+            else
+                hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID())
+                Timers:CreateTimer(3, function()
+                    hero:RemoveAbilityByHandle(ability)
+                end)
+            end
+            break
+        end
+    end
+end
+
+function PlayersControlls:UseAbility(hero)
+    local abilities_game = 
+    {
+        "ability_sniper_mini_game",
+        "ability_mirana_mini_game",
+        "ability_walrus_punch_mini_game",
+        "ability_normal_punch_mini_game",
+        "ability_walrus_kick_mini_game",
+    }
+    for _, ability_name in pairs(abilities_game) do
+        if hero:HasAbility(ability_name) then
+            local ability = hero:FindAbilityByName(ability_name)
+            hero:CastAbilityNoTarget(ability, hero:GetPlayerOwnerID())
         end
     end
 end

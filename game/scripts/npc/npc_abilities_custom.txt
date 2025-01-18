@@ -50,6 +50,360 @@
         "AbilityCooldown"               "1"
         "AbilityCastPoint"              "0.15"
     }
+    "ability_mirana_mini_game"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_mirana_mini_game"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "mirana_arrow"
+        "AbilityCooldown"               "1"
+        "AbilityCastPoint"              "0.15"
+    }
+    "ability_walrus_punch_mini_game"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_walrus_punch_mini_game"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "tusk_walrus_punch"
+        "AbilityCooldown"               "1"
+        "AbilityCastPoint"              "0.15"
+    }
+    "ability_normal_punch_mini_game"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_normal_punch_mini_game"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "dark_seer_normal_punch"
+        "AbilityCooldown"               "3"
+        "AbilityCastPoint"              "0"
+    }
+    "ability_walrus_kick_mini_game"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_walrus_kick_mini_game"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "tusk_walrus_kick"
+        "AbilityCooldown"               "1"
+        "AbilityCastPoint"              "0.15"
+    }
+    // Items
+    "ability_item_1"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_1"
+    }
+    "ability_item_2"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_2"
+    }
+    "ability_item_3"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_3"
+    }
+    "ability_item_4"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_4"
+    }
+    "ability_item_5"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_5"
+    }
+    "ability_item_6"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_6"
+    }
+    "ability_item_7"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_7"
+    }
+    "ability_item_8"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_8"
+    }
+    "ability_item_9"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_9"
+    }
+    "ability_item_10"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/items"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "item_10"
+    }
+
+    // potato
+    "ability_pummel_potato_1"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_potato_1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "windrunner_powershot"
+        "AbilityCooldown"               "10"
+    }
+    "ability_pummel_potato_2"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_potato_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "grimstroke_dark_artistry"
+        "AbilityCooldown"               "10"
+    }
+    "ability_pummel_potato_3"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_potato_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "magnataur_shockwave"
+        "AbilityCooldown"               "10"
+    }
+    "ability_pummel_potato_4"
+    {
+        "BaseClass"						"pudge_meat_hook"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "pudge_meat_hook"
+        "AbilityValues"
+		{
+            "damage"                        "0"
+			"hook_speed"		            "1600"
+			"hook_width"					"100"
+			"AbilityCastRange"			    "1300"
+			"vision_radius"		            "500 500 500 500"
+			"vision_duration"	            "4.0 4.0 4.0 4.0"
+			"reveal_duration"	            "0"
+			"AbilityCooldown"	            "10"
+			"vector_target_distance"        "0"
+			"distance_to_damage"            "0"
+			"min_distance_damage"           "0"
+			"self_stun_duration_percent"    "0"
+		}
+    }
+    "ability_pummel_potato_5"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_potato_5"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "earthshaker_enchant_totem"
+        "AbilityCooldown"               "10"
+    }
+    "ability_pummel_potato_6"
+    {
+        "BaseClass"						"rattletrap_hookshot"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "rattletrap_hookshot"
+        "AbilityCastRange"				"2000"
+        "AbilityCooldown"				"10"
+        "AbilityValues"
+		{
+            "latch_radius"		        "125"
+            "stun_radius"		        "175"
+            "stun_radius_ally"          "175"
+            "cooldown_refund_ally"      "0"
+            "ally_shield_duration"      "0"
+            "allied_armor_bonus"        "0"
+            "duration"			        "1"
+            "speed"				        "4000"
+            "damage"			        "0"
+		}
+    }
+
+    // crown
+    "ability_pummel_grab_crown_1"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_grab_crown_1"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "hoodwink_scurry"
+        "AbilityCooldown"           "10"
+    }
+    "ability_pummel_grab_crown_2"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_grab_crown_2"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "weaver_shukuchi"
+        "AbilityCooldown"               "10"
+    }
+    "ability_pummel_grab_crown_3"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_grab_crown_3"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "dark_seer_surge"
+        "AbilityCooldown"               "10"
+    }
+    "ability_pummel_grab_crown_4"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_grab_crown_4"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "windrunner_windrun"
+        "AbilityCooldown"               "10"
+    }
+    "ability_pummel_grab_crown_5"
+    {
+        "BaseClass"						"magnataur_skewer"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "magnataur_skewer"
+        "AbilityValues"
+		{
+            "AbilityCooldown"           "10"
+            "skewer_speed"			    "900"
+            "range"					    "700"
+            "slow_pct"		            "50"
+            "skewer_radius"				"145"
+            "slow_duration"				""
+            "skewer_damage"			    ""
+            "tree_radius"	            ""		
+            "tree_hit_damage"           ""
+            "cliff_hit_damage"          ""		
+            "terrain_hit_cooldown"      ""
+		}
+    }
+    "ability_pummel_grab_crown_6"
+    {
+        "BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/ability_pummel_grab_crown_6"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"1"
+        "AbilityTextureName"            "faceless_void_time_walk"
+        "AbilityCooldown"           "10"
+    }
+
+    // Circle
+    "pudge_meat_hook"
+	{
+        "AbilityValues"
+		{
+			"damage"                    "5000"
+        }
+    }
+    "mirana_arrow"
+	{
+        "AbilityDamage"					"5000"
+    }
+    "rattletrap_hookshot"
+	{
+        "AbilityValues"
+		{
+            "damage"			        "5000"
+        }
+    }
+    "tiny_toss_tree"
+	{
+        "AbilityValues"
+		{
+			"speed"		                    "2000"
+			"range"		                    "5200"
+            "AbilityCastRange"				"5200"
+			"bonus_damage"			        "5000"
+		}
+    }
+    "mars_spear"
+	{
+        "AbilityValues"
+		{
+			"damage"	    "5000"
+        }
+    }
+    "shredder_chakram"
+	{
+        "AbilityValues"
+		{
+            "pass_damage"   "5000"
+        }
+    }
+    "magnataur_shockwave"
+	{
+        "AbilityValues"
+		{
+            "shock_damage"		"5000"
+        }
+    }
+    "hoodwink_sharpshooter"
+	{
+        "AbilityValues"
+		{
+            "max_damage"        "5000"
+        }
+    }
+    "ancient_apparition_ice_blast"
+	{
+        "AbilityDamage"					"5000"
+    }
+    "queenofpain_sonic_wave"
+	{
+        "AbilityValues"
+		{
+            "damage"	"5000"
+        }
+    }
+    "snapfire_mortimer_kisses"
+	{
+        "AbilityManaCost"   "0"
+        "AbilityValues"
+		{
+            "damage_per_impact"     "5000"
+        }
+    }
+    "invoker_chaos_meteor"
+    {
+        "AbilityValues"
+		{
+            "main_damage"   "5000"
+        }
+    }
 }
 
 
